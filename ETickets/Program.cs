@@ -1,8 +1,11 @@
+using ETickets.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+//DbContext  Configuration
+builder.Services.AddDbContext<AppDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
