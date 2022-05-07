@@ -7,7 +7,6 @@ namespace ETickets.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
         {
-
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -16,8 +15,17 @@ namespace ETickets.Data
                 am.ActorId,
                 am.MovieId
             });
-            modelBuilder.Entity<Actor_Movie>().HasOne(m=>m.Movie).WithMany(am=>am.Actor).HasForeignKey()
+            modelBuilder.Entity<Actor_Movie>().HasOne(m => m.Movie).WithMany(am => am.Actors_Movies).HasForeignKey(m => m.MovieId);
+            modelBuilder.Entity<Actor_Movie>().HasOne(m => m.Actor).WithMany(am => am.Actors_Movies).HasForeignKey(m => m.ActorId);
+
             base.OnModelCreating(modelBuilder);
         }
+        //Defining table name
+        public DbSet<Actor> Actors { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Actor_Movie> Actors_Movies { get; set; }
+        public DbSet<Cinema> Cinemas { get; set; }
+        public DbSet<Producer> Producers { get; set; }
+
     }
 }
