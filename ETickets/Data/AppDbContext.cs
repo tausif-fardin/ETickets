@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ETickets.Data
 {
-    public class IActorsService:DbContext
+    public class AppDbContext:DbContext
     {
-        public IActorsService(DbContextOptions<IActorsService> options):base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

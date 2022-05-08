@@ -3,17 +3,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ETickets.Data.Services
 {
-    public class ActorsService : IActorService
+    public class ActorsService : IActorsService
     {
-        private readonly IActorsService _context;
-
-        public ActorsService(IActorsService context)
+        private readonly AppDbContext _context;
+        public ActorsService(AppDbContext context)
         {
             _context = context;
+
         }
         public void Add(Actor actor)
         {
-            throw new NotImplementedException();
+            _context.Actors.Add(actor);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)

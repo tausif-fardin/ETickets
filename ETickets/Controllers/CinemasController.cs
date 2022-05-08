@@ -6,8 +6,8 @@ namespace ETickets.Controllers
 {
     public class CinemasController : Controller
     {
-        private readonly IActorsService _context;
-        public CinemasController(IActorsService context)
+        private readonly AppDbContext _context;
+        public CinemasController(AppDbContext context)
         {
             _context = context;
         }

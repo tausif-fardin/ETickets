@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ETickets.Migrations
 {
-    [DbContext(typeof(IActorsService))]
+    [DbContext(typeof(AppDbContext))]
     [Migration("20220507192332_Initial")]
     partial class Initial
     {

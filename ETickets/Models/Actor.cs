@@ -8,8 +8,11 @@ namespace ETickets.Models
         //unique identifier
         [Key]
         public int Id { get; set; }
+        [Required(ErrorMessage ="Profile Picture is required")]
         public string ProfilePictureUrl { get; set; }
+        [Required(ErrorMessage = "Name is required")]
         public string  FullName { get; set; }
+        [Required(ErrorMessage ="Bio is required")]
         public string Bio { get; set; }
 
         //Relationships

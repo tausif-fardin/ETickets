@@ -2,7 +2,7 @@
 
 namespace ETickets.Data.Services
 {
-    public interface IActorService
+    public interface IActorsService
     {
         Task<IEnumerable<Actor>> GetAll();
         Actor GetById(int id);

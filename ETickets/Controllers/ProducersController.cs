@@ -6,9 +6,9 @@ namespace ETickets.Controllers
 {
     public class ProducersController : Controller
     {
-        private readonly IActorsService _context;
+        private readonly AppDbContext _context;
 
-        public ProducersController(IActorsService context)
+        public ProducersController(AppDbContext context)
         {
             _context = context;
         }
