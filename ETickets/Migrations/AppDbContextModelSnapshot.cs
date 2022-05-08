@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ETickets.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
+    [DbContext(typeof(IActorsService))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

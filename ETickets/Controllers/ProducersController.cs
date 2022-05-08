@@ -6,9 +6,9 @@ namespace ETickets.Controllers
 {
     public class ProducersController : Controller
     {
-        private readonly AppDbContext _context;
+        private readonly IActorsService _context;
 
-        public ProducersController(AppDbContext context)
+        public ProducersController(IActorsService context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace ETickets.Controllers
         public async Task<IActionResult> Index()
         {
             var allProducers = await _context.Producers.ToListAsync();
-            return View();
+            return View(allProducers);
         }
     }
 }

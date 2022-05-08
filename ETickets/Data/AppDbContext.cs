@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ETickets.Data
 {
-    public class AppDbContext:DbContext
+    public class IActorsService:DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options):base(options)
+        public IActorsService(DbContextOptions<IActorsService> options):base(options)
         {
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,6 +20,7 @@ namespace ETickets.Data
 
             base.OnModelCreating(modelBuilder);
         }
+
         //Defining table name
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Movie> Movies { get; set; }
