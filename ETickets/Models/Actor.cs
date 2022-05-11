@@ -6,7 +6,8 @@ namespace ETickets.Models
     public class Actor
     {
         //unique identifier
-        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, Column(Order = 0)]
         public int Id { get; set; }
         [Required(ErrorMessage ="Profile Picture is required")]
         public string ProfilePictureUrl { get; set; }
